@@ -3,7 +3,7 @@ resolvers += Resolver.sonatypeRepo("releases")
 addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.5")
 
 organization := "com.example"
-name := "fnord"
+name := "$name;format="random"$"
 version := "0.0.1-SNAPSHOT"
 scalaVersion in ThisBuild := "2.12.4"
 
