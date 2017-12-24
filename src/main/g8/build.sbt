@@ -1,5 +1,7 @@
 resolvers += Resolver.sonatypeRepo("releases")
 
+addCommandAlias("build", ";test:compile")
+addCommandAlias("rebuild", ";reload;test:compile")
 addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.5")
 
 organization := "com.example"
@@ -25,3 +27,4 @@ lazy val fnord = project.in(file(".")).dependsOn(app)
 
 // Turn on/off nagging compiler warnings, for debugging purposes:
 //scalacOptions.in(app, Compile) ~= filterConsoleScalacOptions
+
