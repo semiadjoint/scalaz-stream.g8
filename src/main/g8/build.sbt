@@ -23,8 +23,9 @@ lazy val app = project
     mainClass in run := Some("com.example.fnord.app.Main"),
     mainClass in reStart := Some("com.example.fnord.app.Main")
   )
-lazy val fnord = project.in(file(".")).dependsOn(app)
+lazy val fnord = project.in(file("."))
+  .dependsOn(app)
+  .enablePlugins(TutPlugin)
 
 // Turn on/off nagging compiler warnings, for debugging purposes:
 //scalacOptions.in(app, Compile) ~= filterConsoleScalacOptions
-
