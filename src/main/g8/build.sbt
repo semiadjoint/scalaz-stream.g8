@@ -28,5 +28,5 @@ lazy val fnord = project.in(file("."))
   .aggregate(core, app)
   .enablePlugins(TutPlugin)
 
-// Turn on/off nagging compiler warnings, for debugging purposes:
+// Turn on/off nagging compiler warnings from sbt-tpolecat, for debugging purposes:
 //scalacOptions.in(app, Compile) ~= filterConsoleScalacOptions
