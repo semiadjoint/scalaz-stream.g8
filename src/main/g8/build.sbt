@@ -2,6 +2,7 @@ resolvers += Resolver.sonatypeRepo("releases")
 
 addCommandAlias("build", ";test:compile")
 addCommandAlias("rebuild", ";reload;test:compile")
+
 addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.5")
 
 organization := "com.example"
@@ -24,7 +25,7 @@ lazy val app = project
     mainClass in reStart := Some("com.example.fnord.app.Main")
   )
 lazy val fnord = project.in(file("."))
-  .dependsOn(app)
+  .aggregate(core, app)
   .enablePlugins(TutPlugin)
 
 // Turn on/off nagging compiler warnings, for debugging purposes:
