@@ -2,6 +2,7 @@ resolvers += Resolver.sonatypeRepo("releases")
 
 addCommandAlias("build", ";test:compile")
 addCommandAlias("rebuild", ";reload;test:compile")
+addCommandAlias("retest", ";reload;test:test")
 
 addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.5")
 
@@ -14,7 +15,7 @@ scalafmtOnCompile := true
 
 lazy val core = project
 lazy val app = project
-  .dependsOn(core)
+  .dependsOn(core % "test->test;compile->compile")
   .enablePlugins(BuildInfoPlugin)
   .settings(
     buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
