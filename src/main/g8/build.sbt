@@ -7,7 +7,7 @@ addCommandAlias("retest", ";reload;test:test")
 addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.5")
 
 organization := "com.example"
-name := "$name$".take(15)
+name := "$name$"
 version := "0.0.1-SNAPSHOT"
 scalaVersion in ThisBuild := "2.12.4"
 
